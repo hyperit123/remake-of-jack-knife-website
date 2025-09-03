@@ -1,6 +1,7 @@
 :root {
-    --background: #112e23;
+    --background: #1c3253;
     --text: #ffffff;
+    --alt-text: #d1a162;
     --accent: #ff0000;
     --main-color: #3b3636a2;
     --header-color: #2b2a2acc;
@@ -42,26 +43,55 @@ input[type="checkbox"]:checked {
     height: 80px;
     border-radius: 100%;
     margin: 5px;
+    /* Place avatar in left column spanning both rows */
+    grid-column: 1;
+    grid-row: 1;
 }
 #pfpImport {
-    margin-left: 15px;
+    margin-left: 5px;
     margin-bottom: 5px;
+    /* Place Import button below the avatar in the left column */
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
 }
 header {
     background-color: var(--header-color);
     border-radius: 8px;
+    /* Make header a 2x2 grid: [avatar/import] | [name fields] */
+    display: grid;
+    grid-template-columns: auto 2fr;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 1%;
+    align-items: center;
+    padding: 1px;
 }
+
+/* Remove the manual line break in grid layout */
+header br { display: none; }
 
 #ChName, #ChGCR { 
     width: 20%;
-    margin-left: 90px;
     font-size: x-large;
     border-radius: 8px;
     border: 1px solid var(--accent);
     text-align: center;
     background-color: transparent;
     color: var(--text);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    margin-bottom: 5px;
 }
+
+#levelDropdown {
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--alt-text);
+    border-color: var(--accent);
+}
+    
+
+/* Grid placement for the two inputs */
+#ChName { grid-column: 2; grid-row: 1; }
+#ChGCR  { grid-column: 2; grid-row: 2; }
+#levelDropdown { grid-column: 3; grid-row: 1; }

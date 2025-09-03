@@ -60,3 +60,11 @@ const pfpInput = document.getElementById('pfpInput').addEventListener('change', 
         reader.readAsDataURL(this.files[0]);
     }
 });
+
+const levelDropdown = document.getElementById('levelDropdown');
+for (let i = 1; i <= 50; i++) {
+    const option = document.createElement('option');
+    option.value = 'Level ' + i;
+    option.textContent = 'Level ' + i;
+    levelDropdown.appendChild(option);
+}
