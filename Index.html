@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jack Knife??</title>
     <link rel="stylesheet" href="stylesheets.css">
 </head>
 <body>
-    <div class="checkbox-grupe1">
+    <Header>
+        <img src="photo-1533135091724-62cc5402aa20.jpeg" alt="pfp" id="pfp">
+        <br>
+        <input type="file" id="pfpInput" accept="image/*" style="display:none;">
+        <button id="pfpImport">Import</button>
+        <input type="text" id="ChName" value="Character Name">
+        <input type="text" id="ChGCR" value="Gender, Class, Race">
+    </Header>
+    <div class="checkbox-grupe">
+        <input type="text" id="cbgName" value="Tn x3 = max wounds">
+        <br>
         <button id="addCheckbox">+</button>
         <div id="checkboxContainer">
-            <input type="checkbox" id="checkbox">
+            <input type="checkbox"id="checkbox">
         </div>
         <button id="removeCheckbox">-</button>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

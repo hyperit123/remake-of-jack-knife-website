@@ -1,0 +1,67 @@
+:root {
+    --background: #112e23;
+    --text: #ffffff;
+    --accent: #ff0000;
+    --main-color: #3b3636a2;
+    --header-color: #2b2a2acc;
+}
+
+body{
+    background-color: var(--background);
+}
+.checkbox-grupe {
+    background-color: var(--main-color);
+    border-radius: 8px;
+    width: 290px;
+    border: 1px solid var(--accent);
+    margin-top: 5px;
+}
+.checkbox-grupe button {
+    margin: 5px;    
+}
+
+#checkboxContainer input[type="checkbox"] {
+    width: 20px;   
+    height: 20px;
+}
+input[type="checkbox"]:checked {
+    accent-color: var(--accent);
+}
+#cbgName {
+    width: 90%;
+    margin: 5px;
+    font-size: x-large;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    text-align: center;
+    background-color: transparent;
+    color: var(--text);
+}
+#pfp {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    margin: 5px;
+}
+#pfpImport {
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+header {
+    background-color: var(--header-color);
+    border-radius: 8px;
+}
+
+#ChName, #ChGCR { 
+    width: 20%;
+    margin-left: 90px;
+    font-size: x-large;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    text-align: center;
+    background-color: transparent;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
