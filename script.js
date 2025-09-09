@@ -2,49 +2,81 @@ let checkbox = 1;
 const addCheckbox = document.getElementById('addCheckbox');
 const removeCheckbox = document.getElementById('removeCheckbox');
 const checkboxContainer = document.getElementById('checkboxContainer');
-//let cbgName = document.getElementById('cbgName').value;
+
+// Function to create a numbered checkbox container
+function createNumberedCheckbox(number) {
+    const container = document.createElement('div');
+    container.style.position = 'relative';
+    container.style.display = 'inline-block';
+    container.style.margin = '5px';
+    
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = 'checkbox' + number;
+    checkbox.style.width = '30px';
+    checkbox.style.height = '30px';
+    checkbox.style.appearance = 'none';
+    checkbox.style.border = '2px solid #333';
+    checkbox.style.borderRadius = '4px';
+    checkbox.style.position = 'relative';
+    checkbox.style.cursor = 'pointer';
+    
+    const numberSpan = document.createElement('span');
+    numberSpan.textContent = number;
+    numberSpan.style.position = 'absolute';
+    numberSpan.style.top = '50%';
+    numberSpan.style.left = '50%';
+    numberSpan.style.transform = 'translate(-50%, -50%)';
+    numberSpan.style.fontSize = '14px';
+    numberSpan.style.fontWeight = 'bold';
+    numberSpan.style.pointerEvents = 'none';
+    numberSpan.style.color = '#333';
+    
+    // Add checked state styling
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            this.style.backgroundColor = '#007bff';
+            numberSpan.style.color = 'white';
+        } else {
+            this.style.backgroundColor = 'transparent';
+            numberSpan.style.color = '#333';
+        }
+    });
+    
+    container.appendChild(checkbox);
+    container.appendChild(numberSpan);
+    return container;
+}
+
+// Function to update all checkbox numbers
+function updateCheckboxNumbers() {
+    // Clear container
+    checkboxContainer.innerHTML = '';
+    
+    // Add numbered checkboxes
+    for (let i = 1; i <= checkbox; i++) {
+        const numberedCheckbox = createNumberedCheckbox(i);
+        checkboxContainer.appendChild(numberedCheckbox);
+    }
+}
 
 addCheckbox.onclick = function() {
     checkbox++;
-    const newCheckbox = document.createElement('input');
-    newCheckbox.type = 'checkbox';
-    newCheckbox.id = 'checkbox' + checkbox;
-    checkboxContainer.appendChild(newCheckbox);
-    // Add a line break after every 10th checkbox
-    //if (checkbox % 10 === 0) {
-    //const lineBreak = document.createElement('br');
-    //    checkboxContainer.appendChild(lineBreak);
-    //}
+    updateCheckboxNumbers();
 };
 
 removeCheckbox.onclick = function() {
     if (checkbox > 1) {
-        // Remove the last element (which might be a checkbox or a <br>)
-        checkboxContainer.removeChild(checkboxContainer.lastChild);
-
         checkbox--;
-        
-        // If we just removed a line break, also remove the checkbox
-        //if (checkbox % 10 === 0 && checkboxContainer.lastChild.tagName === 'INPUT') {
-            // We removed a <br>, now remove the checkbox too
-        //} 
-        //else if (checkbox % 10 === 0) {
-        //    // We removed a checkbox that was followed by a <br>, so remove the <br> too
-        //    if (checkboxContainer.lastChild && checkboxContainer.lastChild.tagName === 'BR') {
-        //        checkboxContainer.removeChild(checkboxContainer.lastChild);
-        //    }
-        //}
-        //if (checkboxContainer.lastChild.tagName === 'BR') {
-        //    checkbox = checkbox; 
-        //}
-        //else {
-        //    checkbox--;
-        //}
+        updateCheckboxNumbers();
     }
     else {
         alert('Cannot remove the last checkbox.');
     }
 };
+
+// Initialize the first checkbox with number
+updateCheckboxNumbers();
 
 const pfpImport = document.getElementById('pfpImport');
 pfpImport.onclick = function() {

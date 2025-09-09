@@ -20,6 +20,9 @@ body{
 .checkbox-grupe button {
     margin: 5px;    
 }
+#checkbox {
+    margin-left: 5px;
+}
 
 #checkboxContainer input[type="checkbox"] {
     width: 20px;   
