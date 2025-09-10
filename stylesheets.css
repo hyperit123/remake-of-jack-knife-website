@@ -9,27 +9,34 @@
 
 body{
     background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 .checkbox-grupe {
     background-color: var(--main-color);
     border-radius: 8px;
-    width: 290px;
+    width: 300px;
     border: 1px solid var(--accent);
-    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 10px;
 }
 .checkbox-grupe button {
     margin: 5px;    
 }
-#checkbox {
-    margin-left: 5px;
-}
-
-#checkboxContainer input[type="checkbox"] {
+input[type="checkbox"] {
     width: 20px;   
     height: 20px;
+    margin: 5px;
 }
 input[type="checkbox"]:checked {
     accent-color: var(--accent);
+}
+#checkboxContainer input[type="checkbox"] {
+    width: 20px;   
+    height: 20px;
 }
 #cbgName {
     width: 90%;
@@ -63,7 +70,7 @@ header {
     border-radius: 8px;
     /* Make header a 2x2 grid: [avatar/import] | [name fields] */
     display: grid;
-    grid-template-columns: auto 2fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     column-gap: 16px;
     row-gap: 1%;
@@ -74,7 +81,7 @@ header {
 /* Remove the manual line break in grid layout */
 header br { display: none; }
 
-#ChName, #ChGCR { 
+#ChName { 
     width: 20%;
     font-size: x-large;
     border-radius: 8px;
@@ -83,6 +90,21 @@ header br { display: none; }
     background-color: transparent;
     color: var(--text);
     margin-bottom: 5px;
+    width: 90px;
+    height: 30px;
+}
+#ChGCR { 
+    width: 20%;
+    font-size: x-large;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    text-align: center;
+    background-color: transparent;
+    color: var(--text);
+    margin-top: 77px;
+    margin-bottom: 5px;
+    width: 90px;
+    height: 30px;
 }
 
 #levelDropdown {
@@ -91,10 +113,54 @@ header br { display: none; }
     background-color: transparent;
     color: var(--alt-text);
     border-color: var(--accent);
+    margin-left: 30%;
+    width: 90px;
+    height: 30px;
 }
     
 
 /* Grid placement for the two inputs */
 #ChName { grid-column: 2; grid-row: 1; }
-#ChGCR  { grid-column: 2; grid-row: 2; }
-#levelDropdown { grid-column: 3; grid-row: 1; }
+#ChGCR  { grid-column: 2; grid-row: 1; }
+#levelDropdown { grid-column: 2; grid-row: 1; }
+
+.Money {
+    margin-left: 5px;
+}
+
+.text-cont input {
+    background-color: var(--main-color);
+    border-radius: 3px;
+    width: 50px;
+    height: 30px;
+    border: 1px solid var(--accent);
+    font-size: 18px;
+}
+.text-cont{
+    font-size: large;
+    margin-left: 8px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.text-cont span {
+    display: inline-block;
+    width: 150px;
+}
+.text-cont input[type="number"]{
+    width: 69px;
+}
+.title{
+    font-size: x-large;
+    font-weight: bold;
+}
+#stats{
+    margin-left: 10px;
+}
+header button{
+    border: 1px solid var(--accent);
+    background-color: transparent;
+    color: var(--text);
+    border-radius: 5px;
+}

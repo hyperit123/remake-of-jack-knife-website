@@ -1,83 +1,4 @@
-let checkbox = 1;
-const addCheckbox = document.getElementById('addCheckbox');
-const removeCheckbox = document.getElementById('removeCheckbox');
-const checkboxContainer = document.getElementById('checkboxContainer');
-
-// Function to create a numbered checkbox container
-function createNumberedCheckbox(number) {
-    const container = document.createElement('div');
-    container.style.position = 'relative';
-    container.style.display = 'inline-block';
-    container.style.margin = '5px';
-    
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.id = 'checkbox' + number;
-    checkbox.style.width = '30px';
-    checkbox.style.height = '30px';
-    checkbox.style.appearance = 'none';
-    checkbox.style.border = '2px solid #333';
-    checkbox.style.borderRadius = '4px';
-    checkbox.style.position = 'relative';
-    checkbox.style.cursor = 'pointer';
-    
-    const numberSpan = document.createElement('span');
-    numberSpan.textContent = number;
-    numberSpan.style.position = 'absolute';
-    numberSpan.style.top = '50%';
-    numberSpan.style.left = '50%';
-    numberSpan.style.transform = 'translate(-50%, -50%)';
-    numberSpan.style.fontSize = '14px';
-    numberSpan.style.fontWeight = 'bold';
-    numberSpan.style.pointerEvents = 'none';
-    numberSpan.style.color = '#333';
-    
-    // Add checked state styling
-    checkbox.addEventListener('change', function() {
-        if (this.checked) {
-            this.style.backgroundColor = '#007bff';
-            numberSpan.style.color = 'white';
-        } else {
-            this.style.backgroundColor = 'transparent';
-            numberSpan.style.color = '#333';
-        }
-    });
-    
-    container.appendChild(checkbox);
-    container.appendChild(numberSpan);
-    return container;
-}
-
-// Function to update all checkbox numbers
-function updateCheckboxNumbers() {
-    // Clear container
-    checkboxContainer.innerHTML = '';
-    
-    // Add numbered checkboxes
-    for (let i = 1; i <= checkbox; i++) {
-        const numberedCheckbox = createNumberedCheckbox(i);
-        checkboxContainer.appendChild(numberedCheckbox);
-    }
-}
-
-addCheckbox.onclick = function() {
-    checkbox++;
-    updateCheckboxNumbers();
-};
-
-removeCheckbox.onclick = function() {
-    if (checkbox > 1) {
-        checkbox--;
-        updateCheckboxNumbers();
-    }
-    else {
-        alert('Cannot remove the last checkbox.');
-    }
-};
-
-// Initialize the first checkbox with number
-updateCheckboxNumbers();
-
+// Profile image functionality
 const pfpImport = document.getElementById('pfpImport');
 pfpImport.onclick = function() {
     document.getElementById('pfpInput').click();
@@ -100,3 +21,28 @@ for (let i = 1; i <= 50; i++) {
     option.textContent = 'Level ' + i;
     levelDropdown.appendChild(option);
 }
+
+// Checkbox functionality
+const addCheckbox = document.getElementById('addCheckbox');
+const removeCheckbox = document.getElementById('removeCheckbox');
+const checkboxContainer = document.getElementsByClassName('checkboxContainer');
+const addCheckbox1 = document.getElementById('addCheckbox1');
+const removeCheckbox1 = document.getElementById('removeCheckbox1');
+let checkboxCount = 1;
+
+addCheckbox.addEventListener('click', function() {
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = 'checkbox' + checkboxCount;
+    checkboxContainer.appendChild(checkbox);
+    checkboxCount++;
+});
+
+removeCheckbox.addEventListener('click', function() {
+    if (checkboxCount > 1) {
+        checkboxContainer.removeChild(checkboxContainer.lastElementChild);
+        checkboxCount--;
+    }
+});
+
+
