@@ -7,79 +7,140 @@
     <link rel="stylesheet" href="stylesheets.css">
 </head>
 <body>
+    
+    <Header>
+        <img src="photo-1533135091724-62cc5402aa20.jpeg" alt="pfp" id="pfp">
+        <br>
+        <input type="file" id="pfpInput" accept="image/*" style="display:none;">
+        <button id="pfpImport">Import</button>
+        <input type="text" id="ChName" placeholder="Character Name">
+        <input type="text" id="ChGCR" placeholder="Gender, Class, Race">
+        <select id="levelDropdown"></select>
+        <div class="initiative">
+            <span>Initiative:</span>
+            <input type="int" id="initiative" maxlength="2" value="3">
+        </div>
+    </Header>
     <div id="left-cont">
-        <Header>
-            <img src="photo-1533135091724-62cc5402aa20.jpeg" alt="pfp" id="pfp">
-            <br>
-            <input type="file" id="pfpInput" accept="image/*" style="display:none;">
-            <button id="pfpImport">Import</button>
-            <input type="text" id="ChName" placeholder="Character Name">
-            <input type="text" id="ChGCR" placeholder="Gender, Class, Race">
-            <select id="levelDropdown"></select>
-        </Header>
         <div id="stats">
             <span class="title">Stats and Coin</span>
             <div class="text-cont">
                 <span>Weapon Skill (WS):</span>
-                <input type="text" id="statinput" placeholder="3+5"/>
+                <div class="custom-container" id="ws">
+                    <input type="int" placeholder="3" maxlength="2" id="str1">
+                    <div class="custom-separator">+</div>
+                    <input type="int" placeholder="5" maxlength="2" id="str2">
+                    <div class="custom-separator">=</div>
+                    <span maxlength="2" id="str3"></span>
+                </div>
                 <span class="Money"> Credits: </span>
                 <input type="number"/>
             </div> 
             <div class="text-cont">
                 <span>Ballistic Skill (BS):</span>
-                <input type="text" id="statinput" placeholder="3+5"/>
+                <div class="custom-container" id="bs">
+                    <input type="int" placeholder="3" maxlength="2" id="str1">
+                    <div class="custom-separator">+</div>
+                    <input type="int" placeholder="2" maxlength="2" id="str2">
+                    <div class="custom-separator">=</div>
+                    <span maxlength="2" id="str3"></span>
+                </div>
                 <span class="Money"> Dosh: </span>
                 <input type="number"/>
             </div> 
             <div class="text-cont">
                 <span>Strength (Str):</span>
-                <input type="text" id="statinput" placeholder="3+5"/>
+                <div class="custom-container" id="str">
+                    <input type="int" placeholder="3" maxlength="2" id="str1">
+                    <div class="custom-separator">+</div>
+                    <input type="int" placeholder="5" maxlength="2" id="str2">
+                    <div class="custom-separator">=</div>
+                    <span maxlength="2" id="str3"></span>
+                </div>
                 <span class="Money"> Fancy Credits: </span>
                 <input type="number"/>
             </div> 
             <div class="text-cont">
                 <span>Toughness (Tn):</span>
-                <input type="text" id="statinput" placeholder="3+5"/>
+                <div class="custom-container" id="tn">
+                    <input type="int" placeholder="3" maxlength="2" id="str1">
+                    <div class="custom-separator">+</div>
+                    <input type="int" placeholder="1" maxlength="2" id="str2">
+                    <div class="custom-separator">=</div>
+                    <span maxlength="2" id="str3"></span>
+                </div>
             </div> 
             <div class="text-cont">
                 <span>Dexterity (Dex):</span>
-                <input type="text" id="statinput" placeholder="3+5"/>
+                <div class="custom-container" id="dex">
+                    <input type="int" placeholder="3" maxlength="2" id="str1">
+                    <div class="custom-separator">+</div>
+                    <input type="int" placeholder="2" maxlength="2" id="str2">
+                    <div class="custom-separator">=</div>
+                    <span maxlength="2" id="str3"></span>
+                </div>
             </div> 
             <div class="text-cont">
                 <span>Intelligence (INT):</span>
-                <input type="text" id="statinput" placeholder="3+5"/>
+                <div class="custom-container" id="int">
+                    <input type="int" placeholder="3" maxlength="2" id="str1">
+                    <div class="custom-separator">+</div>
+                    <input type="int" placeholder="0" maxlength="2" id="str2">
+                    <div class="custom-separator">=</div>
+                    <span maxlength="2" id="str3"></span>
+                </div>
             </div> 
             <div class="text-cont">
                 <span>Perception (PER):</span>
-                <input type="text" id="statinput" placeholder="3+5"/>
+                <div class="custom-container" id="per">
+                    <input type="int" placeholder="3" maxlength="2" id="str1">
+                    <div class="custom-separator">+</div>
+                    <input type="int" placeholder="2" maxlength="2" id="str2">
+                    <div class="custom-separator">=</div>
+                    <span maxlength="2" id="str3"></span>
+                </div>
             </div> 
             <div class="text-cont">
                 <span>Willpower (WP):</span>
-                <input type="text" id="statinput" placeholder="3+5"/>
+                <div class="custom-container" id="wp">
+                    <input type="int" placeholder="3" maxlength="2" id="str1">
+                    <div class="custom-separator">+</div>
+                    <input type="int" placeholder="1" maxlength="2" id="str2">
+                    <div class="custom-separator">=</div>
+                    <span maxlength="2" id="str3"></span>
+                </div>
             </div> 
             <div class="text-cont">
                 <span>Fellowship (FEL):</span>
-                <input type="text" id="statinput" placeholder="3+5"/>
+                <div class="custom-container" id="fel">
+                    <input type="int" placeholder="3" maxlength="2" id="str1">
+                    <div class="custom-separator">+</div>
+                    <input type="int" placeholder="1" maxlength="2" id="str2">
+                    <div class="custom-separator">=</div>
+                    <span maxlength="2" id="str3"></span>
+                </div>
             </div> 
-        </div>
 
-        <div class="checkbox-grupe">
-            <input type="text" id="cbgName" value="Tn x3 = max wounds">
-            <br>
-            <button id="addCheckbox" class="addCheckbox">+</button>
-            <div class="checkboxContainer">
-                <input type="checkbox"class="checkbox">
+            <div class="checkbox-grupe">
+                <input type="text" id="cbgName" value="Tn x3 = max wounds">
+                <button id="addCheckbox" class="addCheckbox">+</button>
+                <div class="checkboxContainer">
+                    <input type="checkbox"class="checkbox">
+                </div>
+                <button id="removeCheckbox" class="removeCheckbox">-</button>
             </div>
-            <button id="removeCheckbox" class="removeCheckbox">-</button>
+            <div class="checkbox-grupe">
+                <input type="text" id="cbgName" value="Dex x4 = Stamina">
+                <button id="addCheckbox1" class="addCheckbox">+</button>
+                <div class="checkboxContainer">
+                    <input type="checkbox"class="checkbox">
+                </div>
+                <button id="removeCheckbox1" class="removeCheckbox">-</button>
+            </div>
         </div>
-        <div class="checkbox-grupe">
-            <input type="text" id="cbgName" value="Dex x4 = Stamina">
-            <br>
-            <button id="addCheckbox1" class="addCheckbox">+</button>
-            <div class="checkboxContainer">
-                <input type="checkbox"class="checkbox">
-            </div>
-            <button id="removeCheckbox1" class="removeCheckbox">-</button>
+        <div id="checkbox-settings">
+            <input type="button" value="add grid" id="addCheckboxGrid">
+            <input type="button" value="remove grid" id="removeCheckboxGrid">
         </div>
     </div>
     <div id="right-cont">

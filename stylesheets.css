@@ -22,21 +22,45 @@ body{
 #right-cont{
     grid-column: 2;
 }
-
+.custom-container {
+    display: inline-flex;
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+    
+}
+.custom-separator {
+    padding: 0 2px;
+    background-color: var(--accent);
+    color: var(--text);
+    text-align: center;
+    padding-top: 3px;
+}
 input[type="number"] {
     width: 90px;  
     color: var(--text);
 }
-.text-cont input[type="text"] {
-    width: 44px;  
+.text-cont input[type="int"] {
+    width: 24px;  
     color: var(--text);
+    text-align: center;
+}
+#str2{
+    width: 14px;
+}
+#str3{
+    width: 24px;
+    border-radius: 3px;
+    background-color: var(--main-color);
+    color: var(--text);
+    border: 1px solid var(--accent);
+    text-align: center;
 }
 .checkbox-grupe {
     background-color: var(--main-color);
     border-radius: 8px;
     width: 300px;
     border: 1px solid var(--accent);
-    margin-left: 10px;
+    margin-left: 8px;
     margin-bottom: 5px;
     margin-top: 10px;
 }
@@ -62,10 +86,22 @@ input[type="checkbox"]:checked {
     width: 20px;   
     height: 20px;
 }
+#addCheckbox{
+    color: var(--text);
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+#removeCheckbox{
+    color: var(--text);
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
 .addCheckbox{
     width: 30px;
     height: 30px;
-    margin: 5px;
     font-size: x-large;
     border-radius: 8px;
     border: 1px solid var(--accent);
@@ -93,6 +129,7 @@ input[type="checkbox"]:checked {
     color: var(--text);
 }
 header {
+    width: 200%;
     background-color: var(--header-color);
     display: grid;
     grid-template-columns: 0.02fr 0.13fr 0.02fr ;
@@ -109,9 +146,11 @@ header br { display: none; }
     width: 80px;
     height: 80px;
     border-radius: 100%;
+    margin-top: 15px;
 }
 #pfpImport {
     width: 80px;
+    margin-top: 10px;
 }
 
 
@@ -193,3 +232,31 @@ header button{
     border-radius: 5px;
 }
 
+#addCheckboxGrid{
+    margin-left: 18px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    background-color: var(--main-color);
+    color: var(--text);
+    height: 30px;
+    font-size: medium;
+}
+#removeCheckboxGrid{
+    margin-left: 2px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    background-color: var(--main-color);
+    color: var(--text);
+    height: 30px;
+    font-size: medium;
+}
+
+#initiative{
+    font-size: x-large;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    text-align: center;
+    background-color: transparent;
+    color: var(--text);
+    width: 24px;
+}
