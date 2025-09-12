@@ -7,80 +7,83 @@
     <link rel="stylesheet" href="stylesheets.css">
 </head>
 <body>
-    <Header>
-        <img src="photo-1533135091724-62cc5402aa20.jpeg" alt="pfp" id="pfp">
-        <br>
-        <input type="file" id="pfpInput" accept="image/*" style="display:none;">
-        <button id="pfpImport">Import</button>
-        <input type="text" id="ChName" placeholder="Character Name">
-        <input type="text" id="ChGCR" placeholder="Gender, Class, Race">
-        <select id="levelDropdown"></select>
-    </Header>
     <div id="left-cont">
+        <Header>
+            <img src="photo-1533135091724-62cc5402aa20.jpeg" alt="pfp" id="pfp">
+            <br>
+            <input type="file" id="pfpInput" accept="image/*" style="display:none;">
+            <button id="pfpImport">Import</button>
+            <input type="text" id="ChName" placeholder="Character Name">
+            <input type="text" id="ChGCR" placeholder="Gender, Class, Race">
+            <select id="levelDropdown"></select>
+        </Header>
         <div id="stats">
             <span class="title">Stats and Coin</span>
             <div class="text-cont">
                 <span>Weapon Skill (WS):</span>
-                <input type="text" placeholder="3+5"/>
+                <input type="text" id="statinput" placeholder="3+5"/>
                 <span class="Money"> Credits: </span>
                 <input type="number"/>
             </div> 
             <div class="text-cont">
                 <span>Ballistic Skill (BS):</span>
-                <input type="text" placeholder="3+5"/>
+                <input type="text" id="statinput" placeholder="3+5"/>
                 <span class="Money"> Dosh: </span>
                 <input type="number"/>
             </div> 
             <div class="text-cont">
                 <span>Strength (Str):</span>
-                <input type="text" placeholder="3+5"/>
+                <input type="text" id="statinput" placeholder="3+5"/>
                 <span class="Money"> Fancy Credits: </span>
                 <input type="number"/>
             </div> 
             <div class="text-cont">
                 <span>Toughness (Tn):</span>
-                <input type="text" placeholder="3+5"/>
+                <input type="text" id="statinput" placeholder="3+5"/>
             </div> 
             <div class="text-cont">
                 <span>Dexterity (Dex):</span>
-                <input type="text" placeholder="3+5"/>
+                <input type="text" id="statinput" placeholder="3+5"/>
             </div> 
             <div class="text-cont">
                 <span>Intelligence (INT):</span>
-                <input type="text" placeholder="3+5"/>
+                <input type="text" id="statinput" placeholder="3+5"/>
             </div> 
             <div class="text-cont">
                 <span>Perception (PER):</span>
-                <input type="text" placeholder="3+5"/>
+                <input type="text" id="statinput" placeholder="3+5"/>
             </div> 
             <div class="text-cont">
                 <span>Willpower (WP):</span>
-                <input type="text" placeholder="3+5"/>
+                <input type="text" id="statinput" placeholder="3+5"/>
             </div> 
             <div class="text-cont">
                 <span>Fellowship (FEL):</span>
-                <input type="text" placeholder="3+5"/>
+                <input type="text" id="statinput" placeholder="3+5"/>
             </div> 
         </div>
 
         <div class="checkbox-grupe">
             <input type="text" id="cbgName" value="Tn x3 = max wounds">
             <br>
-            <button id="addCheckbox">+</button>
+            <button id="addCheckbox" class="addCheckbox">+</button>
             <div class="checkboxContainer">
                 <input type="checkbox"class="checkbox">
             </div>
-            <button id="removeCheckbox">-</button>
+            <button id="removeCheckbox" class="removeCheckbox">-</button>
         </div>
         <div class="checkbox-grupe">
             <input type="text" id="cbgName" value="Dex x4 = Stamina">
             <br>
-            <button id="addCheckbox1">+</button>
+            <button id="addCheckbox1" class="addCheckbox">+</button>
             <div class="checkboxContainer">
                 <input type="checkbox"class="checkbox">
             </div>
-            <button id="removeCheckbox1">-</button>
+            <button id="removeCheckbox1" class="removeCheckbox">-</button>
         </div>
+    </div>
+    <div id="right-cont">
+        
     </div>
 
     <script src="script.js"></script>

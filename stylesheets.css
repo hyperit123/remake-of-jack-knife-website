@@ -1,25 +1,35 @@
 :root {
-    --background: #1c3253;
+    --background: #2d154d;
     --text: #ffffff;
-    --alt-text: #d1a162;
-    --accent: #ff0000;
-    --main-color: #3b3636a2;
-    --header-color: #2b2a2acc;
-    --checked: #700c0c;
+    --accent: #ff0008;
+    --main-color: #00000050 ;
+    --header-color: #00000069 ;
+    --checked: #2e1853;
 }
 
 body{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     background-color: var(--background);
     color: var(--text);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
+#left-cont{
+    grid-column: 1;
+}
+#right-cont{
+    grid-column: 2;
+}
+
 input[type="number"] {
-    width: 6.3%;
+    width: 90px;  
+    color: var(--text);
 }
 .text-cont input[type="text"] {
-    width: 2%;
+    width: 44px;  
+    color: var(--text);
 }
 .checkbox-grupe {
     background-color: var(--main-color);
@@ -52,6 +62,26 @@ input[type="checkbox"]:checked {
     width: 20px;   
     height: 20px;
 }
+.addCheckbox{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    font-size: x-large;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    background-color: transparent;
+    color: var(--text);
+}
+.removeCheckbox{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    text-align: center;
+    background-color: transparent;
+    color: var(--text);
+}
 #cbgName {
     width: 90%;
     margin: 5px;
@@ -62,32 +92,28 @@ input[type="checkbox"]:checked {
     background-color: transparent;
     color: var(--text);
 }
-#pfp {
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
-    margin: 5px;
-}
-#pfpImport {
-    margin-left: 5px;
-    margin-bottom: 5px;
-
-}
 header {
     background-color: var(--header-color);
-    border-radius: 8px;
-    /* Make header a 2x2 grid: [avatar/import] | [name fields] */
-    display: flex;
-    flex-direction: column;
-
-    column-gap: 16px;
-    row-gap: 1%;
+    display: grid;
+    grid-template-columns: 0.02fr 0.13fr 0.02fr ;
+    grid-template-rows: 50px 40px;
+    column-gap: 10px;
+    row-gap: 11px;
+    padding: 10px;
     align-items: center;
-    padding: 1px;
 }
 
 /* Remove the manual line break in grid layout */
 header br { display: none; }
+#pfp {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+#pfpImport {
+    width: 80px;
+}
+
 
 #ChName { 
     font-size: x-large;
@@ -97,7 +123,8 @@ header br { display: none; }
     background-color: transparent;
     color: var(--text);
     margin-bottom: 5px;
-    size: 20%;
+    width: 290px;
+    height: 39px;
 
 }
 #ChGCR { 
@@ -107,7 +134,8 @@ header br { display: none; }
     text-align: center;
     background-color: transparent;
     color: var(--text);
-    size: 20%;
+    width: 290px;
+    height: 39px;
 
 }
 
@@ -115,7 +143,7 @@ header br { display: none; }
     border-radius: 8px;
     font-size: 16px;
     background-color: transparent;
-    color: var(--alt-text);
+    color: var(--text);
     border-color: var(--accent);
     width: 90px;
     height: 30px;
@@ -123,8 +151,10 @@ header br { display: none; }
     
 
 /* Grid placement for the two inputs */
+#pfp { grid-column: 1; grid-row: 1; }
+#pfpImport { grid-column: 1; grid-row: 2; }
 #ChName { grid-column: 2; grid-row: 1; }
-#ChGCR  { grid-column: 2; grid-row: 1; }
+#ChGCR  { grid-column: 2; grid-row: 2; }
 #levelDropdown { grid-column: 3; grid-row: 1; }
 
 .Money {
@@ -138,13 +168,15 @@ header br { display: none; }
     font-size: 18px;
 }
 .text-cont{
+    display: flex;
+    flex-direction: row;
     font-size: large;
     margin-left: 8px;
     margin-bottom: 5px;
 }
 .text-cont span {
     display: inline-block;
-    width: 150px;
+    width: 165px;
 }
 
 .title{
@@ -160,3 +192,4 @@ header button{
     color: var(--text);
     border-radius: 5px;
 }
+
