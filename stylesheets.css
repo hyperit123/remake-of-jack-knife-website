@@ -2,9 +2,9 @@
     --background: #2d154d;
     --text: #ffffff;
     --accent: #ff0008;
-    --main-color: #00000050 ;
+    --main-color: #2e1a1a70 ;
     --header-color: #00000069 ;
-    --checked: #2e1853;
+    --checked: #4c1ba0;
 }
 
 body{
@@ -15,6 +15,22 @@ body{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+}
+body button{
+    border: 1px solid var(--accent);
+    background-color: var(--main-color);
+    color: var(--text);
+    border-radius: 3px;
+    font-size: medium;
+}
+body input[type="text"]{
+    border-radius: 3px;
+    border: 1px solid var(--accent);
+    background-color: var(--main-color);
+    color: var(--text);
+}
+body button:active{
+    background-color: var(--accent);
 }
 #left-cont{
     grid-column: 1;
@@ -30,7 +46,7 @@ body{
 }
 .custom-separator {
     padding: 0 2px;
-    background-color: var(--accent);
+    background-color: var(--main-color);
     color: var(--text);
     text-align: center;
     padding-top: 3px;
@@ -39,15 +55,17 @@ input[type="number"] {
     width: 90px;  
     color: var(--text);
 }
-.text-cont input[type="int"] {
+.text-cont input[type="text"] {
     width: 24px;  
     color: var(--text);
     text-align: center;
 }
 #str2{
     width: 14px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
-#str3{
+.Total{
     width: 24px;
     border-radius: 3px;
     background-color: var(--main-color);
@@ -55,81 +73,8 @@ input[type="number"] {
     border: 1px solid var(--accent);
     text-align: center;
 }
-.checkbox-grupe {
-    background-color: var(--main-color);
-    border-radius: 8px;
-    width: 300px;
-    border: 1px solid var(--accent);
-    margin-left: 8px;
-    margin-bottom: 5px;
-    margin-top: 10px;
-}
-.checkbox-grupe button {
-    margin: 5px;    
-}
-input[type="checkbox"] {
-    width: 20px;   
-    height: 20px;
-    margin: 5px;
-    border-radius: 3px;
-    border: 1px solid var(--accent);
-    background-color: transparent;
-    appearance: none;
-}
-input[type="checkbox"]:checked {
-    appearance: none;
-    background-color: var(--checked);
-    border-radius: 3px;
-    border: 1px solid var(--accent);
-}
-#checkboxContainer input[type="checkbox"] {
-    width: 20px;   
-    height: 20px;
-}
-#addCheckbox{
-    color: var(--text);
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
-}
-#removeCheckbox{
-    color: var(--text);
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
-}
-
-.addCheckbox{
-    width: 30px;
-    height: 30px;
-    font-size: x-large;
-    border-radius: 8px;
-    border: 1px solid var(--accent);
-    background-color: transparent;
-    color: var(--text);
-}
-.removeCheckbox{
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-    border-radius: 8px;
-    border: 1px solid var(--accent);
-    text-align: center;
-    background-color: transparent;
-    color: var(--text);
-}
-#cbgName {
-    width: 90%;
-    margin: 5px;
-    font-size: x-large;
-    border-radius: 8px;
-    border: 1px solid var(--accent);
-    text-align: center;
-    background-color: transparent;
-    color: var(--text);
-}
 header {
-    width: 200%;
+    width: 100%;
     background-color: var(--header-color);
     display: grid;
     grid-template-columns: 0.02fr 0.13fr 0.02fr ;
@@ -146,13 +91,12 @@ header br { display: none; }
     width: 80px;
     height: 80px;
     border-radius: 100%;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 #pfpImport {
     width: 80px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
-
 
 #ChName { 
     font-size: x-large;
@@ -250,13 +194,45 @@ header button{
     height: 30px;
     font-size: medium;
 }
-
-#initiative{
-    font-size: x-large;
-    border-radius: 8px;
+#addCheckboxGrid:active{
+    background-color: var(--accent);
+}
+#removeCheckboxGrid:active{
+    background-color: var(--accent);
+}
+.cb-grupe{
+    display: flex;
+    flex-direction: column;
     border: 1px solid var(--accent);
-    text-align: center;
-    background-color: transparent;
-    color: var(--text);
-    width: 24px;
+    border-radius: 8px;
+    background-color: var(--main-color);
+    margin-left: 6px;
+    width: 385px;
+}
+#cb-name{
+    margin: 5px;
+    width: 260px;
+    font-size: x-large;
+}
+.buttos{
+    margin: 5px;
+    width: 26px;
+    font-size: larger;
+}
+
+input[type="checkbox"]{
+    width: 24px;   
+    height: 24px;
+    margin: 6px;
+    border-radius: 3px;
+    border: 1px solid var(--accent);
+    background-color: var(--main-color);
+    appearance: none;
+}
+
+input[type="checkbox"]:checked {
+    appearance: none;
+    background-color: var(--checked);
+    border-radius: 3px;
+    border: 1px solid var(--accent);
 }
