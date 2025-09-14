@@ -71,7 +71,7 @@ body button:active{
 }
 input[type="number"] {
     width: 90px;  
-    color: var(--text);
+    color: var(--text)
 }
 .text-cont input[type="text"] {
     width: 24px;  
@@ -218,6 +218,14 @@ header button{
 #Modcb{
     grid-column: 2;
     grid-row: 1;
+    height: 28px;
+    width: 45px;
+}
+#Modcb1{
+    grid-column: 2;
+    grid-row: 2;
+    height: 28px;
+    width: 45px;
 }
 #checkbox{
     grid-column: 1;
@@ -252,6 +260,16 @@ input[type="checkbox"]:checked {
     border: 1px solid var(--accent);
 }
 
+#actionsTab{
+    width: 60px;
+}
+#traitsTab{
+    width: 50px;
+}
+#inventoryTab{
+    width: 80px;
+}
+
 #Actions{
     display: block;
 }
@@ -266,7 +284,7 @@ input[type="checkbox"]:checked {
 }
 #tabgrub{
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 60px 50px 50px;   
     column-gap: 10px;
 }
 
@@ -298,14 +316,14 @@ input[type="checkbox"]:checked {
     height: 28px;
     font-size: medium;
 }
-#Modcb{
+.Modcb{
     margin-left: 2px;
     margin-top: 5px;
-    border: 1px solid var(--accent);
     border-radius: 8px;
-    background-color: var(--main-color);
-    color: var(--text);
-    height: 28px;
-    width: 60px;
     font-size: medium;
+    border: 1px solid var(--accent);
+    background-color: var(--main-color);
+    color: var(--text); 
+    text-align: center;
 }
+
