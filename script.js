@@ -47,29 +47,54 @@ stats.forEach(stat => {
         let cbcont = document.querySelector(`#tnTotal`).textContent * 3;
         cbContainer.innerHTML = '';
         for (let i = 0; i < cbcont; i++) {
+
+            let labelNum = i + 1;
+            const cbwrapper = document.createElement('div');
+            cbwrapper.className = 'cb-wrapper';
+            cbContainer.appendChild(cbwrapper);
+            cbwrapper.style.position = 'relative';
+            cbwrapper.style.display = 'inline-block';
+
             const cb = document.createElement('input');
             cb.type = 'checkbox';
-            cb.id = 'cb';
-            cbContainer.appendChild(cb);
+            cb.id = 'cb'+ labelNum;
+            cbwrapper.appendChild(cb);
+
             const label = document.createElement('label');
-            let labelNum = i + 1;
-            label.htmlFor = 'cb';
+            label.htmlFor = 'cb'+ labelNum;
             label.textContent = labelNum;
-            cbContainer.appendChild(label);
+            cbwrapper.appendChild(label);
+            label.style.position = 'absolute';
+            label.style.right = '8px';
+            label.style.top = '8px';
+            label.style.pointerEvents = 'none';
         }
         let stamina = 4;
         let cbcont1 = document.querySelector(`#dexTotal`).textContent * stamina;
         cbContainer1.innerHTML = '';
         for (let i = 0; i < cbcont1; i++) {
+
+            let labelNum = i + 1;
+            const cbwrapper = document.createElement('div');
+            cbwrapper.className = 'cb-wrapper';
+            cbContainer1.appendChild(cbwrapper);
+            cbwrapper.style.position = 'relative';
+            cbwrapper.style.display = 'inline-block';
+
             const cb = document.createElement('input');
             cb.type = 'checkbox';
-            cb.id = 'cb';
-            cbContainer1.appendChild(cb);
+            cb.id = 'cb'+ labelNum;
+            cbwrapper.appendChild(cb);
+
             const label = document.createElement('label');
-            let labelNum = i + 1;
-            label.htmlFor = 'cb';
+            label.htmlFor = 'cb'+ labelNum;
             label.textContent = labelNum;
-            cbContainer1.appendChild(label);
+            cbwrapper.appendChild(label);
+            label.style.position = 'absolute';
+            label.style.right = '8px';
+            label.style.top = '8px';
+            label.style.pointerEvents = 'none';
+            label.style.color = 'var(--text)';
         }
     };
     
@@ -77,3 +102,51 @@ stats.forEach(stat => {
     input2.addEventListener('input', update);
     update(); // Initialize
 });
+
+//tap functionality
+const actionsTab = document.getElementById('actionsTab');
+const traitsTab = document.getElementById('traitsTab');
+const inventoryTab = document.getElementById('inventoryTab');
+const actions = document.getElementById('Actions');
+const traits = document.getElementById('Traits');
+const inventory = document.getElementById('Inventory');
+
+const updateActionsTab = () => {
+    actions.style.display = 'block';
+    traits.style.display = 'none';
+    inventory.style.display = 'none';
+    actionsTab.style.backgroundColor = 'var(--accent)';
+    traitsTab.style.backgroundColor = 'var(--main-color)';
+    inventoryTab.style.backgroundColor = 'var(--main-color)';
+}
+
+const updateTraitsTab = () => {
+    actions.style.display = 'none';
+    traits.style.display = 'block';
+    inventory.style.display = 'none';
+    actionsTab.style.backgroundColor = 'var(--main-color)';
+    traitsTab.style.backgroundColor = 'var(--accent)';
+    inventoryTab.style.backgroundColor = 'var(--main-color)';
+}
+
+const updateInventoryTab = () => {
+    actions.style.display = 'none';
+    traits.style.display = 'none';
+    inventory.style.display = 'block';
+    actionsTab.style.backgroundColor = 'var(--main-color)';
+    traitsTab.style.backgroundColor = 'var(--main-color)';
+    inventoryTab.style.backgroundColor = 'var(--accent)';
+}
+
+actionsTab.addEventListener('click', updateActionsTab);
+traitsTab.addEventListener('click', updateTraitsTab);
+inventoryTab.addEventListener('click', updateInventoryTab);
+updateActionsTab();
+
+// add checkbox boxes functionality
+const addCbb = document.getElementById('addCbb');
+const removeCbb = document.getElementById('removeCbb');
+const cbbody = document.getElementById('cb-body');
+
+let cbbCount = 2;
+

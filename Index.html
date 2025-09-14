@@ -119,12 +119,14 @@
             <div id="cb-body">
                 <div class="cb-grupe">
                     <input type="text" id="cb-name" value="Tn x3 = Max Wounds">
+                    <button id="Modcb">modify</button>
                     <div id ="cb-container">
                         <input type="checkbox" id="cb">
                     </div>
                 </div>
                 <div class="cb-grupe">
                     <input type="text" id="cb-name" value="Dex x4 = Stamina">
+                    <button id="Modcb">modify</button>
                     <div id ="cb-container1">
                         <input type="checkbox" id="cb">
                     </div>
@@ -132,12 +134,78 @@
             </div>
         </div>
         <div id="cb-settings">
-            <button id="addCheckboxGrid">add grid</button>
-            <button id="removeCheckboxGrid">remove grid</button>
+            <button id="addCbb">add box</button>
+            <button id="removeCbb">remove box</button>
         </div>
     </div>
     <div id="right-cont">
-        
+        <div id="tabgrub">
+            <button id="actionsTab">Actions</button>
+            <button id="traitsTab">Traits</button>
+            <button id="inventoryTab">Inventory</button>
+        </div>
+        <div id="Actions">
+            <div id ="sections">
+                <h3>Actions</h3>
+                <div class="TBContainer">
+                    <textarea name="actions" id="ta1" class="ta"></textarea>
+                </div>
+                <button class="addtbbtn">Add Text Box</button>
+            </div>
+            <div id ="sections">
+                <h3>Bonus Actions</h3>
+                <div class="TBContainer">
+                    <textarea name="bonusactions" id="ta1" class="ta"></textarea>
+                </div>
+                <button class="addtbbtn">Add Text Box</button>
+            </div>
+            <div id ="sections">
+                <h3>Other</h3>
+                <div class="TBContainer">
+                    <textarea name="other" id="ta1" class="ta"></textarea>
+                </div>
+                <button class="addtbbtn">Add Text Box</button>
+            </div>
+        </div>
+        <div id="Traits">
+            <div id="sections">
+                <h3>Traits</h3>
+                <div class="TBContainer">
+                    <textarea name="traits" id="ta1" class="ta"></textarea>
+                </div>
+                <button class="addtbbtn">Add Text Box</button>
+            </div>
+            <div id ="sections">
+                <h3>Resistances</h3>
+                <div class="TBContainer">
+                    <textarea name="resistances" id="ta1" class="ta"></textarea>
+                </div>
+                <button class="addtbbtn">Add Text Box</button>
+            </div>
+            <div id="sections">
+                <h3>Immunities</h3>
+                <div class="TBContainer">
+                    <textarea name="immunities" id="ta1" class="ta"></textarea>
+                </div>
+                <button class="addtbbtn">Add Text Box</button>
+            </div>
+            <div id="sections">
+                <h3>Weaknesses</h3>
+                <div class="TBContainer">
+                    <textarea name="weaknesses" id="ta1" class="ta"></textarea>
+                </div>
+                <button class="addtbbtn">Add Text Box</button>
+            </div>
+        </div>
+        <div id="Inventory">
+            <div id="sections">
+                <h3>Inventory</h3>
+                <div class="TBContainer">
+                    <textarea name="inventory" id="ta1" class="ta"></textarea>
+                </div>
+                <button class="addtbbtn">Add Text Box</button>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
