@@ -154,4 +154,11 @@ traitsTab.addEventListener('click', updateTraitsTab);
 inventoryTab.addEventListener('click', updateInventoryTab);
 updateActionsTab();
 
-// add checkbox boxes functionality
+// add text areas functionality
+const addtbbtn = ['addtbbtn1', 'addtbbtn2', 'addtbbtn3', 'addtbbtn4', 'addtbbtn5', 'addtbbtn6', 'addtbbtn7','addtbbtn8'];
+const TBContainer = ['TBContainer1', 'TBContainer2', 'TBContainer3', 'TBContainer4', 'TBContainer5', 'TBContainer6', 'TBContainer7','TBContainer8'];
+
+addtbbtn.forEach((btn, i) => {
+    const ta = document.createElement('textarea');
+    TBContainer[i].appendChild(ta);
+});
