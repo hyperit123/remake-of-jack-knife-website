@@ -155,12 +155,16 @@ inventoryTab.addEventListener('click', updateInventoryTab);
 updateActionsTab();
 
 // add text areas functionality
-const addtbbtn = ['addtbbtn1', 'addtbbtn2', 'addtbbtn3', 'addtbbtn4', 'addtbbtn5', 'addtbbtn6', 'addtbbtn7','addtbbtn8'];
-const TBContainer = ['TBContainer1', 'TBContainer2', 'TBContainer3', 'TBContainer4', 'TBContainer5', 'TBContainer6', 'TBContainer7','TBContainer8'];
+const addtbbtn = ['addtbbtn1', 'addtbbtn2', 'addtbbtn3', 'addtbbtn4', 'addtbbtn5', 'addtbbtn6', 'addtbbtn7', 'addtbbtn8' ];
+const TBContainer = ['TBContainer1', 'TBContainer2', 'TBContainer3', 'TBContainer4', 'TBContainer5', 'TBContainer6', 'TBContainer7', 'TBContainer8' ];
 
-addtbbtn.forEach((btn, i) => {
-    const ta = document.createElement('textarea');
-    ta.id = 'ta' + i;
-    TBContainer[i].appendChild('ta' + i);
-    console.log(TBContainer[i]);
+addtbbtn.forEach((addtbbtn, index) => {
+    const button = document.getElementById(addtbbtn);
+    const container = document.getElementById(TBContainer[index]);
+    button.addEventListener('click', () => {
+        const ta = document.createElement('textarea');
+        ta.className = 'ta';
+        ta.id = 'ta' + index;
+        container.appendChild(ta);
+    });
 });
