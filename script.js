@@ -158,9 +158,11 @@ updateActionsTab();
 const addtbbtn = ['addtbbtn1', 'addtbbtn2', 'addtbbtn3', 'addtbbtn4', 'addtbbtn5', 'addtbbtn6', 'addtbbtn7','addtbbtn8'];
 const TBContainer = ['TBContainer1', 'TBContainer2', 'TBContainer3', 'TBContainer4', 'TBContainer5', 'TBContainer6', 'TBContainer7','TBContainer8'];
 
-addtbbtn.forEach((btn, i) => {
-    const ta = document.createElement('textarea');
-    ta.id = 'ta' + i;
-    TBContainer[i].appendChild('ta' + i);
-    console.log(TBContainer[i]);
+addtbbtn.forEach((btnId, i) => {
+    document.getElementById(btnId).onclick = () => {
+        const ta = document.createElement('textarea');
+        ta.className = 'ta';
+        ta.ondblclick = () => ta.remove();
+        document.getElementById(TBContainer[i]).appendChild(ta);
+    };
 });
