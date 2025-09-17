@@ -160,5 +160,7 @@ const TBContainer = ['TBContainer1', 'TBContainer2', 'TBContainer3', 'TBContaine
 
 addtbbtn.forEach((btn, i) => {
     const ta = document.createElement('textarea');
-    TBContainer[i].appendChild(ta);
+    ta.id = 'ta' + i;
+    TBContainer[i].appendChild('ta' + i);
+    console.log(TBContainer[i]);
 });
