@@ -31,7 +31,7 @@ const Modcb = document.getElementById('Modcb');
 const Modcb1 = document.getElementById('Modcb1');   
 
 
-//stats
+//stats / more checkbox functionality
 const stats = ['ws', 'bs', 'str', 'tn', 'dex', 'per','int', 'wp', 'fel'];
 
 stats.forEach(stat => {
@@ -162,7 +162,60 @@ addtbbtn.forEach((btnId, i) => {
     document.getElementById(btnId).onclick = () => {
         const ta = document.createElement('textarea');
         ta.className = 'ta';
-        ta.ondblclick = () => ta.remove();
+        ta.id = 'ta' + i;
         document.getElementById(TBContainer[i]).appendChild(ta);
+        const xbt = document.createElement('button');
+        xbt.textContent = 'X';
+        xbt.className = 'xbtn';
+        xbt.onclick = () => {
+            ta.remove();
+            xbt.remove();
+        };
+        document.getElementById(TBContainer[i]).appendChild(xbt);
     };
+});
+addtbbtn();
+
+// adding and removing check box boxes
+const addbox = document.getElementById('acbb');
+const boxContainer = document.getElementById('cb-body');
+
+addbox.addEventListener ('click' + i, () => {
+    const box = document.createElement('div');
+    box.className = 'cb-grupe';
+    boxContainer.appendChild(box);
+    box.style.display = 'grid';
+
+    const text = document.createElement('input');
+    text.type = 'text';
+    text.id = 'cb-name';
+    text.maxLength = 17;
+    text.value = 'New Box';
+    text.style.gridRow = '1 ';
+    text.style.gridColumn = '1';
+
+    const mod = document.createElement('input');
+    mod.id = 'modcb';
+    mod.value = '1';
+    mod.maxLength = 2;
+    mod.className = 'Modcb';
+    mod.style.gridRow = '1';
+    mod.style.gridColumn = '2';
+    box.appendChild(mod);
+
+    const mod2 = document.createElement('input');
+    mod2.id = 'modcb3';
+    mod2.value = '1';
+    mod2.maxLength = 2;
+    mod2.className = 'Modcb';
+    mod2.style.gridRow = '1';
+    mod2.style.gridColumn = '3';
+    box.appendChild(mod);
+    box.appendChild(mod2);
+    box.appendChild(text);
+
+    const cbCont = document.createElement('div');
+    cbCont.className = 'cbcontainer';
+    cbCont.id = 'cb-container2';
+    box.appendChild(cbCont);
 });

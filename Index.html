@@ -30,7 +30,7 @@
                     <strong class="Total" id="wsTotal">0</strong>
                 </div>
                 <span class="Money"> Credits: </span>
-                <input type="number"/>
+                <input class="cash" maxlength="7"/>
             </div> 
             <div class="text-cont">
                 <span>Ballistic Skill (BS):</span>
@@ -42,7 +42,7 @@
                     <strong class="Total" id="bsTotal">0</strong>
                 </div>
                 <span class="Money"> Dosh: </span>
-                <input type="number"/>
+                <input class="cash" maxlength="7"/>
             </div> 
             <div class="text-cont">
                 <span>Strength (Str):</span>
@@ -54,7 +54,7 @@
                     <strong class="Total" id="strTotal">0</strong>
                 </div>
                 <span class="Money"> Fancy Credits: </span>
-                <input type="number"/>
+                <input class="cash" maxlength="7"/>
             </div> 
             <div class="text-cont">
                 <span>Toughness (Tn):</span>
@@ -116,25 +116,25 @@
                     <strong class="Total" id="felTotal">0</strong>
                 </div>
             </div> 
-            <div id="cb-body">
-                <div class="cb-grupe">
-                    <input type="text" id="cb-name" value="Max Wounds">
-                    <input type="number" id="Modcb" value="3" class="Modcb">
-                    <div id ="cb-container">
-                        <input type="checkbox" id="cb">
-                    </div>
+        </div>
+        <div id="cb-body">
+            <div class="cb-grupe">
+                <input type="text" id="cb-name" maxlength='17' value="Max Wounds">
+                <input id="Modcb" value="3" maxlength= '2' class="Modcb">
+                <div id ="cb-container">
+                    <input type="checkbox" id="cb">
                 </div>
-                <div class="cb-grupe">
-                    <input type="text" id="cb-name" value="Stamina">
-                    <input type="number" id="Modcb1" value="4" class="Modcb">
-                    <div id ="cb-container1">
-                        <input type="checkbox" id="cb">
-                    </div>
+            </div>
+            <div class="cb-grupe">
+                <input type="text" maxlength='17' id="cb-name" value="Stamina">
+                <input id="Modcb1" value="4" maxlength="2" class="Modcb">
+                <div id ="cb-container1">
+                    <input type="checkbox" id="cb">
                 </div>
             </div>
         </div>
         <div id="cb-settings">
-            <button id="addCbb">add box</button>
+            <button id="acbb">add box</button>
             <button id="removeCbb">remove box</button>
         </div>
     </div>
