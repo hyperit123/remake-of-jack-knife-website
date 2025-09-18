@@ -9,7 +9,7 @@
 
 body{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     column-gap: 10px;
     background-color: var(--background);
     color: var(--text);
@@ -23,12 +23,14 @@ header {
     width: all;
     background-color: var(--header-color);
     display: grid;
-    grid-template-columns: 0.34fr 0.01fr 0.02fr 0.02fr;
+    grid-template-columns: 0.34fr 0.06fr 0.07fr 0.001fr;
     grid-template-rows: 50px 40px;
     column-gap: 10px;
     row-gap: 11px;
     padding:10px;
+    padding-bottom: 9px;
     align-items: center;
+    margin-bottom: 5px;
 }
 #left-cont{
     grid-row: 2;
@@ -73,7 +75,7 @@ body button:active{
     width: 70px;  
     color: var(--text);
     padding-right: 5px;
-    text-align: right;
+    text-align: right; 
 }
 .text-cont input[type="text"] {
     width: 24px;  
@@ -116,7 +118,7 @@ header br { display: none; }
     color: var(--text);
     width: 360px;
     height: 39px;
-
+    margin-left: 5%;
 }
 #ChGCR { 
     font-size: x-large;
@@ -125,7 +127,7 @@ header br { display: none; }
     text-align: center;
     background-color: transparent;
     color: var(--text);
-    width: 360px;
+    width: 400px;
     height: 39px;
 
 }
