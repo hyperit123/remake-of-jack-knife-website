@@ -155,12 +155,67 @@ inventoryTab.addEventListener('click', updateInventoryTab);
 updateActionsTab();
 
 // add text areas functionality
-const addtbbtn = ['addtbbtn1', 'addtbbtn2', 'addtbbtn3', 'addtbbtn4', 'addtbbtn5', 'addtbbtn6', 'addtbbtn7', 'addtbbtn8' ];
-const TBContainer = ['TBContainer1', 'TBContainer2', 'TBContainer3', 'TBContainer4', 'TBContainer5', 'TBContainer6', 'TBContainer7', 'TBContainer8' ];
+const addtbbtn = ['addtbbtn1', 'addtbbtn2', 'addtbbtn3', 'addtbbtn4', 'addtbbtn5', 'addtbbtn6', 'addtbbtn7','addtbbtn8'];
+const TBContainer = ['TBContainer1', 'TBContainer2', 'TBContainer3', 'TBContainer4', 'TBContainer5', 'TBContainer6', 'TBContainer7','TBContainer8'];
 
-addtbbtn.forEach((btn, i) => {
-    const ta = document.createElement('textarea');
-    ta.id = 'ta' + i;
-    TBContainer[i].appendChild('ta' + i);
-    console.log(TBContainer[i]);
+addtbbtn.forEach((btnId, i) => {
+    document.getElementById(btnId).onclick = () => {
+        const ta = document.createElement('textarea');
+        ta.className = 'ta';
+        ta.id = 'ta' + i;
+        document.getElementById(TBContainer[i]).appendChild(ta);
+        const xbt = document.createElement('button');
+        xbt.textContent = 'X';
+        xbt.className = 'xbtn';
+        xbt.onclick = () => {
+            ta.remove();
+            xbt.remove();
+        };
+        document.getElementById(TBContainer[i]).appendChild(xbt);
+    };
+});
+addtbbtn();
+
+// adding and removing check box boxes
+const addbox = document.getElementById('acbb');
+const boxContainer = document.getElementById('cb-body');
+
+addbox.addEventListener ('click' + i, () => {
+    const box = document.createElement('div');
+    box.className = 'cb-grupe';
+    boxContainer.appendChild(box);
+    box.style.display = 'grid';
+
+    const text = document.createElement('input');
+    text.type = 'text';
+    text.id = 'cb-name';
+    text.maxLength = 17;
+    text.value = 'New Box';
+    text.style.gridRow = '1 ';
+    text.style.gridColumn = '1';
+
+    const mod = document.createElement('input');
+    mod.id = 'modcb';
+    mod.value = '1';
+    mod.maxLength = 2;
+    mod.className = 'Modcb';
+    mod.style.gridRow = '1';
+    mod.style.gridColumn = '2';
+    box.appendChild(mod);
+
+    const mod2 = document.createElement('input');
+    mod2.id = 'modcb3';
+    mod2.value = '1';
+    mod2.maxLength = 2;
+    mod2.className = 'Modcb';
+    mod2.style.gridRow = '1';
+    mod2.style.gridColumn = '3';
+    box.appendChild(mod);
+    box.appendChild(mod2);
+    box.appendChild(text);
+
+    const cbCont = document.createElement('div');
+    cbCont.className = 'cbcontainer';
+    cbCont.id = 'cb-container2';
+    box.appendChild(cbCont);
 });
