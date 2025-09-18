@@ -73,6 +73,7 @@ body button:active{
     width: 70px;  
     color: var(--text);
     padding-right: 5px;
+    text-align: right;
 }
 .text-cont input[type="text"] {
     width: 24px;  
