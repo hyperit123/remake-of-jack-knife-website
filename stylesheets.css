@@ -69,9 +69,10 @@ body button:active{
     text-align: center;
     padding-top: 3px;
 }
-input[type="number"] {
-    width: 90px;  
-    color: var(--text)
+.cash {
+    width: 70px;  
+    color: var(--text);
+    padding-right: 5px;
 }
 .text-cont input[type="text"] {
     width: 24px;  
@@ -182,7 +183,7 @@ header button{
     border-radius: 5px;
 }
 
-#addCbb{
+#acbb{
     margin-top: 5px;
     margin-left: 20px;
     border: 1px solid var(--accent);
@@ -202,7 +203,7 @@ header button{
     height: 28px;
     font-size: medium;
 }
-#addCbb:active{
+#acbb:active{
     background-color: var(--accent);
 }
 #removeCbb:active{
@@ -218,14 +219,10 @@ header button{
 #Modcb{
     grid-column: 2;
     grid-row: 1;
-    height: 28px;
-    width: 45px;
 }
 #Modcb1{
     grid-column: 2;
-    grid-row: 2;
-    height: 28px;
-    width: 45px;
+    grid-row: 1;
 }
 #checkbox{
     grid-column: 1;
@@ -300,7 +297,7 @@ input[type="checkbox"]:checked {
     margin: 2px;
     min-width: 80px;
     min-height: 24px;
-    max-width: 900px;
+    max-width: 600px;
     border-radius: 8px;
     border: 1px solid var(--accent);
     background-color: var(--main-color);
@@ -312,7 +309,7 @@ input[type="checkbox"]:checked {
 .addtbbtn{
     margin-bottom: 5px;
     border-radius: 8px;
-    
+
     height: 28px;
     font-size: medium;
 }
@@ -325,9 +322,28 @@ input[type="checkbox"]:checked {
     background-color: var(--main-color);
     color: var(--text); 
     text-align: center;
+    height: 28px;
+    width: 26px;
 }
 
-#TBContainer1, #TBContainer2, #TBContainer3, #TBContainer4, #TBContainer5, #TBContainer6, #TBContainer7 {
-    display: flex;
-    flex-direction: column;
+#TBContainer1, #TBContainer2, #TBContainer3, #TBContainer4, #TBContainer5, #TBContainer6, #TBContainer7, #TBContainer8 {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#cb-body{
+    margin-left: 10px;
+}
+.xbtn{
+    margin: 2px;
+    height: 24px;
+    width: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    background-color: var(--main-color);
+    color: var(--text);
+    font-size: 14px;
+    text-align: center; 
+}
+.xbtn:active{
+    background-color: var(--accent);
 }
