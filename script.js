@@ -195,7 +195,7 @@ addbox.addEventListener ('click' + i, () => {
     text.style.gridColumn = '1';
 
     const mod = document.createElement('input');
-    mod.id = 'modcb';
+    mod.id = 'modcb3';
     mod.value = '1';
     mod.maxLength = 2;
     mod.className = 'Modcb';
@@ -204,7 +204,7 @@ addbox.addEventListener ('click' + i, () => {
     box.appendChild(mod);
 
     const mod2 = document.createElement('input');
-    mod2.id = 'modcb3';
+    mod2.id = 'modcb4';
     mod2.value = '1';
     mod2.maxLength = 2;
     mod2.className = 'Modcb';
