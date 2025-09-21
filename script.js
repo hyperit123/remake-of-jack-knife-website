@@ -174,48 +174,130 @@ addtbbtn.forEach((btnId, i) => {
         document.getElementById(TBContainer[i]).appendChild(xbt);
     };
 });
-addtbbtn();
 
 // adding and removing check box boxes
 const addbox = document.getElementById('acbb');
+const removeBox = document.getElementById('removeCbb');
 const boxContainer = document.getElementById('cb-body');
+let boxCounter = 2;
 
-addbox.addEventListener ('click' + i, () => {
-    const box = document.createElement('div');
-    box.className = 'cb-grupe';
-    boxContainer.appendChild(box);
-    box.style.display = 'grid';
+// Function to create checkboxes based on modifier value
+function createCheckboxes(container, modValue, boxId) {
+    container.innerHTML = '';
+    const numCheckboxes = parseInt(modValue) || 1;
+    
+    for (let i = 0; i < numCheckboxes; i++) {
+        let labelNum = i + 1;
+        const cbwrapper = document.createElement('div');
+        cbwrapper.className = 'cb-wrapper';
+        cbwrapper.style.position = 'relative';
+        cbwrapper.style.display = 'inline-block';
+        cbwrapper.style.margin = '2px';
+        container.appendChild(cbwrapper);
 
-    const text = document.createElement('input');
-    text.type = 'text';
-    text.id = 'cb-name';
-    text.maxLength = 17;
-    text.value = 'New Box';
-    text.style.gridRow = '1 ';
-    text.style.gridColumn = '1';
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.id = `cb-${boxId}-${labelNum}`;
+        cb.style.width = '24px';
+        cb.style.height = '24px';
+        cb.style.margin = '5px';
+        cb.style.borderRadius = '3px';
+        cb.style.border = '1px solid var(--accent)';
+        cb.style.backgroundColor = 'var(--main-color)';
+        cb.style.appearance = 'none';
+        cbwrapper.appendChild(cb);
 
-    const mod = document.createElement('input');
-    mod.id = 'modcb3';
-    mod.value = '1';
-    mod.maxLength = 2;
-    mod.className = 'Modcb';
-    mod.style.gridRow = '1';
-    mod.style.gridColumn = '2';
-    box.appendChild(mod);
+        const label = document.createElement('label');
+        label.htmlFor = `cb-${boxId}-${labelNum}`;
+        label.textContent = labelNum;
+        label.style.position = 'absolute';
+        label.style.right = '8px';
+        label.style.top = '8px';
+        label.style.pointerEvents = 'none';
+        label.style.color = 'var(--text)';
+        label.style.fontSize = '12px';
+        cbwrapper.appendChild(label);
+    }
+}
 
-    const mod2 = document.createElement('input');
-    mod2.id = 'modcb4';
-    mod2.value = '1';
-    mod2.maxLength = 2;
-    mod2.className = 'Modcb';
-    mod2.style.gridRow = '1';
-    mod2.style.gridColumn = '3';
-    box.appendChild(mod);
-    box.appendChild(mod2);
-    box.appendChild(text);
+// Leave existing Max Wounds and Stamina checkboxes to work with stat calculations
+// Only apply direct modifier control to new boxes
 
-    const cbCont = document.createElement('div');
-    cbCont.className = 'cbcontainer';
-    cbCont.id = 'cb-container2';
-    box.appendChild(cbCont);
-});
+// Add new checkbox group functionality
+if (addbox) {
+    addbox.addEventListener('click', () => {
+        const box = document.createElement('div');
+        box.className = 'cb-grupe';
+        boxContainer.appendChild(box);
+        box.style.display = 'grid';
+        box.style.gridTemplateColumns = '1fr 1fr';
+        box.style.alignItems = 'center';
+        box.style.margin = '5px';
+
+        const text = document.createElement('input');
+        text.type = 'text';
+        text.id = `cb-name-${boxCounter}`;
+        text.maxLength = 17;
+        text.value = 'New Box';
+        text.style.gridRow = '1';
+        text.style.gridColumn = '1';
+        text.style.margin = '5px';
+        text.style.fontSize = 'x-large';
+        text.style.width = '260px';
+        text.style.border = '1px solid var(--accent)';
+        text.style.borderRadius = '3px';
+        text.style.backgroundColor = 'var(--main-color)';
+        text.style.color = 'var(--text)';
+        box.appendChild(text);
+
+        const mod = document.createElement('input');
+        mod.id = `modcb-${boxCounter}`;
+        mod.value = '1';
+        mod.maxLength = 2;
+        mod.className = 'Modcb';
+        mod.style.gridRow = '1';
+        mod.style.gridColumn = '2';
+        mod.style.margin = '5px';
+        mod.style.width = '26px';
+        mod.style.height = '28px';
+        mod.style.textAlign = 'center';
+        box.appendChild(mod);
+
+        const cbCont = document.createElement('div');
+        cbCont.className = 'cbcontainer';
+        cbCont.id = `cb-container-${boxCounter}`;
+        cbCont.style.gridRow = '2';
+        cbCont.style.gridColumn = '1/3';
+        cbCont.style.padding = '5px';
+        box.appendChild(cbCont);
+
+        // Store the current boxCounter for this specific box
+        const currentBoxId = boxCounter;
+
+        // Function to update checkboxes when modifier changes
+        const updateCheckboxes = () => {
+            createCheckboxes(cbCont, mod.value, `box${currentBoxId}`);
+        };
+
+        // Add event listener to modifier input
+        mod.addEventListener('input', updateCheckboxes);
+        
+        // Initialize checkboxes
+        updateCheckboxes();
+        
+        boxCounter++;
+    });
+}
+
+// Remove box functionality
+if (removeBox) {
+    removeBox.addEventListener('click', () => {
+        const boxes = boxContainer.querySelectorAll('.cb-grupe');
+        
+        if (boxes.length > 2) { // Keep at least the original 2 boxes
+            const lastBox = boxes[boxes.length - 1];
+            lastBox.remove();
+            boxCounter = Math.max(2, boxCounter - 1);
+        }
+    });
+}
